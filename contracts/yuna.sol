@@ -833,7 +833,7 @@ contract YUNA is ERC20, Ownable {
                     require(block.timestamp >= inTime[sender] + freezeTime);
                 }
             } else {
-                if (freezeTime > 0) {
+                if (freezeTime > 0 && amount >= 100 * 1e18) {
                     inTime[recipient] = block.timestamp;
                 }
             }
